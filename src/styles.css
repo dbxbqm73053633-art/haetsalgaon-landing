@@ -23,11 +23,15 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+body,
+#root {
   width: 100%;
   max-width: 100%;
-  margin: 0;
   overflow-x: hidden;
+}
+
+body {
+  margin: 0;
   color: var(--text);
   background: var(--white);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", Arial, sans-serif;
@@ -41,20 +45,27 @@ a {
   text-decoration: none;
 }
 
-img {
+img,
+video {
   display: block;
   width: 100%;
   max-width: 100%;
   height: auto;
+  box-sizing: border-box;
 }
 
 section,
 main,
 .container,
 .gallery-grid,
+.gallery-card,
+.benefit-card,
+.contact-card,
 .price-wrap,
-.price-table {
+.price-table,
+.floating-call {
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .container {
