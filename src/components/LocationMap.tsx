@@ -5,24 +5,48 @@ const PHONE_NUMBER = "01082366672";
 const LOCATION = {
   name: "햇살가온 1동",
   address: "파주시 상지석동 651번지",
-  lat: 37.759,
-  lng: 126.78,
 };
 
-const KAKAO_MAP_URL = `https://map.kakao.com/link/to/햇살가온,${LOCATION.lat},${LOCATION.lng}`;
+const KAKAO_MAP_URL = `https://map.kakao.com/link/search/${encodeURIComponent(
+  LOCATION.address,
+)}`;
 
 type KakaoLatLng = new (lat: number, lng: number) => unknown;
+type KakaoMapInstance = {
+  setCenter: (latLng: unknown) => void;
+};
 type KakaoMap = new (
   container: HTMLElement,
   options: { center: unknown; level: number },
-) => unknown;
-type KakaoMarker = new (options: { position: unknown; map: unknown }) => unknown;
+) => KakaoMapInstance;
+type KakaoMarkerInstance = {
+  setPosition: (latLng: unknown) => void;
+};
+type KakaoMarker = new (options: {
+  position: unknown;
+  map: KakaoMapInstance;
+}) => KakaoMarkerInstance;
+type KakaoGeocoder = {
+  addressSearch: (
+    address: string,
+    callback: (
+      result: Array<{ x: string; y: string }>,
+      status: string,
+    ) => void,
+  ) => void;
+};
 
 type KakaoMaps = {
   LatLng: KakaoLatLng;
   Map: KakaoMap;
   Marker: KakaoMarker;
   load: (callback: () => void) => void;
+  services: {
+    Geocoder: new () => KakaoGeocoder;
+    Status: {
+      OK: string;
+    };
+  };
 };
 
 type KakaoGlobal = {
@@ -63,15 +87,35 @@ export default function LocationMap() {
         return;
       }
 
-      const center = new window.kakao.maps.LatLng(LOCATION.lat, LOCATION.lng);
+      const fallbackCenter = new window.kakao.maps.LatLng(37.759, 126.78);
       const map = new window.kakao.maps.Map(mapRef.current, {
-        center,
+        center: fallbackCenter,
         level: 4,
       });
-
-      new window.kakao.maps.Marker({
-        position: center,
+      const marker = new window.kakao.maps.Marker({
+        position: fallbackCenter,
         map,
+      });
+      const geocoder = new window.kakao.maps.services.Geocoder();
+
+      geocoder.addressSearch(LOCATION.address, (result, status) => {
+        if (status !== window.kakao?.maps.services.Status.OK || result.length === 0) {
+          console.error(
+            `Kakao map failed to geocode address: "${LOCATION.address}". Status: ${status}`,
+          );
+          setHasMapError(true);
+          return;
+        }
+
+        const { x, y } = result[0];
+        const searchedPosition = new window.kakao!.maps.LatLng(
+          Number(y),
+          Number(x),
+        );
+
+        map.setCenter(searchedPosition);
+        marker.setPosition(searchedPosition);
+        setHasMapError(false);
       });
     };
 
@@ -87,7 +131,7 @@ export default function LocationMap() {
     const script = document.createElement("script");
     script.dataset.kakaoMapSdk = "true";
     script.async = true;
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${mapKey}&autoload=false`;
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${mapKey}&libraries=services&autoload=false`;
     script.onload = () => window.kakao?.maps.load(renderMap);
     script.onerror = () => {
       console.error(
