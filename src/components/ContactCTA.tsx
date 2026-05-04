@@ -8,20 +8,22 @@ export default function ContactCTA() {
         <div>
           <span className="section-kicker">Consulting</span>
           <h2>지금 상담하기</h2>
-          <p>6월 분양 예정 물량은 사전 문의 고객에게 우선 안내됩니다.</p>
+          <p>6월 분양 예정 물량은 사전 문의 고객에게 우선 안내합니다.</p>
         </div>
 
         <div className="contact-card">
           <dl>
             <div>
               <dt>담당자</dt>
-              <dd>이재은 실장</dd>
+              <dd>이재성 실장</dd>
             </div>
+
             <div>
               <dt>전화번호</dt>
               <dd>{DISPLAY_PHONE}</dd>
             </div>
           </dl>
+
           <a className="button button--gold button--wide" href={`tel:${PHONE_NUMBER}`}>
             전화하기
           </a>

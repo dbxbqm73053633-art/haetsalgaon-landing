@@ -4,8 +4,8 @@ type PriceRow = {
 };
 
 const prices: PriceRow[] = [
-  { unit: "101호(테라스)", price: "37,900" },
-  { unit: "102호(테라스)", price: "39,400" },
+  { unit: "101호 테라스", price: "37,900" },
+  { unit: "102호 테라스", price: "39,400" },
   { unit: "201호", price: "34,400" },
   { unit: "202호", price: "34,900" },
   { unit: "301호", price: "35,100" },
@@ -20,7 +20,7 @@ export default function PriceTable() {
       <div className="container">
         <div className="section-heading">
           <span className="section-kicker">Price</span>
-          <h2>세대별 분양가</h2>
+          <h2>호실별 분양가</h2>
           <p>잔여 호실과 상세 조건은 전화 상담으로 가장 빠르게 안내드립니다.</p>
         </div>
 
@@ -28,15 +28,16 @@ export default function PriceTable() {
           <table className="price-table">
             <thead>
               <tr>
-                <th scope="col">세대</th>
+                <th scope="col">호실</th>
                 <th scope="col">분양가</th>
               </tr>
             </thead>
+
             <tbody>
               {prices.map((row) => (
                 <tr key={row.unit}>
-                  <td>{row.unit}</td>
-                  <td>{row.price}</td>
+                  <td data-label="호실">{row.unit}</td>
+                  <td data-label="분양가">{row.price}</td>
                 </tr>
               ))}
             </tbody>
