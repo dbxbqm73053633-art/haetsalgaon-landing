@@ -27,7 +27,7 @@ export default function Benefits() {
       <div className="container">
         <div className="section-heading section-heading--light">
           <span className="section-kicker">Benefits</span>
-          <h2>해살가온 핵심 장점</h2>
+          <h2>햇살가온 핵심 장점</h2>
           <p>문의 전 꼭 필요한 장점을 간결하게 정리했습니다.</p>
         </div>
 

@@ -4,14 +4,16 @@ type GalleryItem = {
 };
 
 const galleryItems: GalleryItem[] = [
-  { title: "외관", src: "/images/exterior.jpg" },
-  { title: "거실", src: "/images/livingroom.jpg" },
-  { title: "주방", src: "/images/kitchen.jpg" },
-  { title: "안방", src: "/images/bedroom.jpg" },
-  { title: "작은방", src: "/images/smallroom.jpg" },
-  { title: "욕실", src: "/images/bathroom.jpg" },
-  { title: "테라스", src: "/images/terrace.jpg" },
+  { title: "외관", src: "images/exterior.jpg" },
+  { title: "거실", src: "images/livingroom.jpg" },
+  { title: "주방", src: "images/kitchen.jpg" },
+  { title: "안방", src: "images/bedroom.jpg" },
+  { title: "작은방", src: "images/smallroom.jpg" },
+  { title: "욕실", src: "images/bathroom.jpg" },
+  { title: "테라스", src: "images/terrace.jpg" },
 ];
+
+const getPublicAssetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 export default function Gallery() {
   return (
@@ -27,8 +29,8 @@ export default function Gallery() {
           {galleryItems.map((item) => (
             <article className="gallery-card" key={item.title}>
               <img
-                src={item.src}
-                alt={`해살가온 ${item.title} 이미지`}
+                src={getPublicAssetUrl(item.src)}
+                alt={`햇살가온 ${item.title} 이미지`}
                 loading="lazy"
               />
               <strong>{item.title}</strong>

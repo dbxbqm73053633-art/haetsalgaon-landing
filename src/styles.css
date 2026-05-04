@@ -122,7 +122,7 @@ main,
   color: var(--white);
   background:
     linear-gradient(180deg, rgba(7, 26, 51, 0.28), rgba(7, 26, 51, 0.9)),
-    url("/images/exterior.jpg") center / cover,
+    url("/haetsalgaon-landing/images/exterior.jpg") center / cover,
     linear-gradient(135deg, #122948, #071a33);
 }
 
@@ -314,7 +314,7 @@ main,
   color: var(--white);
   background:
     linear-gradient(90deg, rgba(7, 26, 51, 0.94), rgba(7, 26, 51, 0.82)),
-    url("/images/livingroom.jpg") center / cover,
+    url("/haetsalgaon-landing/images/livingroom.jpg") center / cover,
     var(--navy);
 }
 
