@@ -15,7 +15,7 @@ export default function ContactCTA() {
           <dl>
             <div>
               <dt>담당자</dt>
-              <dd>이재성 실장</dd>
+              <dd>이재은 실장</dd>
             </div>
 
             <div>
