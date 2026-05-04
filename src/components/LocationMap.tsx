@@ -42,13 +42,23 @@ export default function LocationMap() {
   useEffect(() => {
     const mapKey = import.meta.env.VITE_KAKAO_MAP_KEY;
 
-    if (!mapKey || !mapRef.current) {
+    if (!mapKey) {
+      console.error(
+        "Kakao map failed to load: VITE_KAKAO_MAP_KEY is missing. Add it to Cloudflare Pages environment variables.",
+      );
+      setHasMapError(true);
+      return;
+    }
+
+    if (!mapRef.current) {
+      console.error("Kakao map failed to load: map container was not found.");
       setHasMapError(true);
       return;
     }
 
     const renderMap = () => {
       if (!window.kakao || !mapRef.current) {
+        console.error("Kakao map failed to load: Kakao Maps SDK is unavailable.");
         setHasMapError(true);
         return;
       }
@@ -79,7 +89,12 @@ export default function LocationMap() {
     script.async = true;
     script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${mapKey}&autoload=false`;
     script.onload = () => window.kakao?.maps.load(renderMap);
-    script.onerror = () => setHasMapError(true);
+    script.onerror = () => {
+      console.error(
+        "Kakao map failed to load: SDK script request failed. Check the Kakao JavaScript key, allowed domains, and Cloudflare Pages environment variable.",
+      );
+      setHasMapError(true);
+    };
 
     document.head.appendChild(script);
   }, []);
