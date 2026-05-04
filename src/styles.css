@@ -64,6 +64,8 @@ main,
 .option-card,
 .environment-card,
 .price-card,
+.location-card,
+.map-card,
 .price-wrap,
 .price-table,
 .floating-call {
@@ -231,6 +233,12 @@ main,
   color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.52);
   background: rgba(255, 255, 255, 0.08);
+}
+
+.button--outline-dark {
+  color: var(--navy);
+  border-color: rgba(7, 26, 51, 0.2);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .button--wide {
@@ -477,6 +485,95 @@ main,
   font-weight: 800;
 }
 
+.location-layout {
+  display: grid;
+  gap: 16px;
+}
+
+.location-card,
+.map-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.location-card {
+  padding: 24px;
+}
+
+.location-card__label {
+  display: inline-flex;
+  margin: 0 0 14px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: var(--navy);
+  background: rgba(225, 195, 112, 0.3);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.location-card h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 28px;
+}
+
+.location-card__address {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.location-card__notice {
+  margin: 0 0 22px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.location-card__actions {
+  display: grid;
+  gap: 10px;
+}
+
+.map-card {
+  position: relative;
+  min-height: 280px;
+  background:
+    linear-gradient(135deg, rgba(7, 26, 51, 0.08), rgba(225, 195, 112, 0.14)),
+    var(--ivory);
+}
+
+.kakao-map {
+  width: 100%;
+  min-height: 280px;
+}
+
+.map-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 14px;
+  padding: 24px;
+  color: var(--navy);
+  background:
+    linear-gradient(135deg, rgba(248, 245, 239, 0.94), rgba(255, 255, 255, 0.9)),
+    var(--ivory);
+  text-align: center;
+}
+
+.map-fallback p {
+  max-width: 360px;
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.55;
+}
+
 .contact {
   color: var(--white);
   background:
@@ -609,6 +706,16 @@ main,
 
   .environment-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .location-layout {
+    grid-template-columns: 0.82fr 1.18fr;
+    align-items: stretch;
+  }
+
+  .kakao-map,
+  .map-card {
+    min-height: 360px;
   }
 
   .contact__inner {
@@ -762,8 +869,13 @@ main,
   }
 
   .option-card,
-  .environment-card {
+  .environment-card,
+  .location-card {
     padding: 18px;
+  }
+
+  .location-card h3 {
+    font-size: 24px;
   }
 
   .contact-card div {
