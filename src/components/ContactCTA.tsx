@@ -1,6 +1,6 @@
 const PHONE_NUMBER = "01082366672";
 const DISPLAY_PHONE = "010-8236-6672";
-const KAKAO_TALK_URL = "https://open.kakao.com/";
+const KAKAO_TALK_URL = "https://open.kakao.com/o/sF1Nbrti";
 
 export default function ContactCTA() {
   return (
@@ -42,7 +42,7 @@ export default function ContactCTA() {
             📞 지금 상담하기
           </a>
 
-          <a className="button button--outline button--wide" href={KAKAO_TALK_URL} target="_blank" rel="noreferrer">
+          <a className="button button--outline button--wide" href={KAKAO_TALK_URL} target="_blank" rel="noopener noreferrer">
             💬 카카오톡 문의
           </a>
         </div>
