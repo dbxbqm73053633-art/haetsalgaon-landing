@@ -20,7 +20,7 @@ export default function Gallery() {
         <div className="section-heading">
           <span className="section-kicker">Gallery</span>
           <h2>현장 이미지</h2>
-          <p>단지 외관부터 테라스까지 주요 공간을 한눈에 확인하세요.</p>
+          <p>외관부터 테라스까지 주요 공간을 한눈에 확인하세요.</p>
         </div>
 
         <div className="gallery-grid">

@@ -7,7 +7,7 @@ export default function FloatingCallButton() {
       href={`tel:${PHONE_NUMBER}`}
       aria-label="이재은 실장에게 전화하기"
     >
-      전화 상담 바로 연결
+      010-8236-6672 전화 상담
     </a>
   );
 }

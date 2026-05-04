@@ -1,23 +1,19 @@
 const benefits = [
   {
-    title: "테라스 세대 구성",
-    description:
-      "선호도 높은 테라스 세대를 포함해 실거주 만족도와 희소가치를 높였습니다.",
+    title: "남향 설계",
+    description: "채광과 통풍을 고려한 배치로 하루의 생활 만족도를 높였습니다.",
   },
   {
-    title: "다양한 구조 선택",
-    description:
-      "호실별 구조와 층별 조건을 비교해 가족 구성에 맞는 선택이 가능합니다.",
+    title: "테라스 세대",
+    description: "한정 세대에 제공되는 테라스 공간으로 실내외 활용도를 넓혔습니다.",
   },
   {
-    title: "생활 인프라 접근성",
-    description:
-      "주변 생활권의 편의시설과 이동 동선을 고려한 입지 장점을 갖췄습니다.",
+    title: "서울 접근성",
+    description: "운정 생활권과 서울 이동 동선을 함께 고려한 입지입니다.",
   },
   {
-    title: "사전 문의 고객 우선 안내",
-    description:
-      "분양 일정, 잔여 호실, 방문 상담 가능 시간을 먼저 안내드립니다.",
+    title: "생활 인프라",
+    description: "마트, 학교, 병원 등 일상 편의시설을 가깝게 누릴 수 있습니다.",
   },
 ];
 
@@ -26,9 +22,9 @@ export default function Benefits() {
     <section className="section section--navy" id="benefits">
       <div className="container">
         <div className="section-heading section-heading--light">
-          <span className="section-kicker">Benefits</span>
-          <h2>햇살가온 핵심 장점</h2>
-          <p>문의 전 꼭 필요한 장점을 간결하게 정리했습니다.</p>
+          <span className="section-kicker">Premium Points</span>
+          <h2>전단지 핵심 장점</h2>
+          <p>분양 문의 전 가장 많이 확인하는 장점을 카드형으로 정리했습니다.</p>
         </div>
 
         <div className="benefit-grid">
