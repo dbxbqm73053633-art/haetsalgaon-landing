@@ -13,7 +13,7 @@ export default function Environment() {
         <div className="section-heading">
           <span className="section-kicker">Living Infra</span>
           <h2>생활 인프라</h2>
-          <p>마트, 학교, 병원, 공원, 대중교통까지 가까운 생활권입니다.</p>
+          <p>마트, 학교, 병원, 공원, 대중교통까지 가까운 생활권</p>
         </div>
 
         <div className="environment-grid">

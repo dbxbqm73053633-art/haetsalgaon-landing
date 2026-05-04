@@ -158,16 +158,16 @@ export default function LocationMap() {
             <h3>{LOCATION.name}</h3>
             <p className="location-card__address">{LOCATION.address}</p>
             <p className="location-card__notice">
-              방문 전 잔여세대 및 상담 가능 시간을 확인해보세요.
+              방문 전 잔여세대 확인 후 예약 방문 권장드립니다.
             </p>
 
             <div className="location-card__actions">
               <a className="button button--gold" href={KAKAO_MAP_URL} target="_blank" rel="noreferrer">
-                현장 위치 확인하기
+                📍 현장 위치 확인
               </a>
 
               <a className="button button--outline button--outline-dark" href={`tel:${PHONE_NUMBER}`}>
-                잔여세대 전화문의
+                📞 방문 상담 문의
               </a>
             </div>
           </article>
@@ -177,9 +177,9 @@ export default function LocationMap() {
 
             {hasMapError ? (
               <div className="map-fallback">
-                <p>지도가 표시되지 않을 경우 아래 버튼으로 정확한 위치를 확인해주세요.</p>
+                <p>지도가 표시되지 않을 경우 아래 버튼을 통해 위치를 확인해주세요.</p>
                 <a className="button button--gold" href={KAKAO_MAP_URL} target="_blank" rel="noreferrer">
-                  현장 위치 확인하기
+                  📍 현장 위치 확인
                 </a>
               </div>
             ) : null}

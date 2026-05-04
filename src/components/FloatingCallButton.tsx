@@ -7,7 +7,7 @@ export default function FloatingCallButton() {
       href={`tel:${PHONE_NUMBER}`}
       aria-label="이재은 실장에게 전화하기"
     >
-      010-8236-6672 잔여세대 전화문의
+      📞 010-8236-6672 잔여세대 문의
     </a>
   );
 }

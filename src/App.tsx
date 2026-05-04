@@ -1,6 +1,7 @@
 import Benefits from "./components/Benefits";
 import ContactCTA from "./components/ContactCTA";
 import Environment from "./components/Environment";
+import FinalCTA from "./components/FinalCTA";
 import FloatingCallButton from "./components/FloatingCallButton";
 import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
@@ -20,6 +21,7 @@ export default function App() {
         <LocationMap />
         <PriceTable />
         <ContactCTA />
+        <FinalCTA />
       </main>
 
       <FloatingCallButton />

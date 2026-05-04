@@ -24,8 +24,10 @@ export default function PriceTable() {
         <div className="section-heading">
           <span className="section-kicker">Remaining Units</span>
           <h2>잔여세대 및 분양가 안내</h2>
-          <p>호실별 면적과 분양가를 확인하시고, 관심 세대는 빠르게 상담 받아보세요.</p>
+          <p>관심 호실은 빠르게 상담 받아보세요.</p>
         </div>
+
+        <p className="urgency-line">현재 잔여세대 한정 분양</p>
 
         <div className="price-card-grid">
           {prices.map((row) => (
@@ -39,14 +41,24 @@ export default function PriceTable() {
                 </p>
               </div>
 
-              <a className="button button--gold button--compact" href={`tel:${PHONE_NUMBER}`}>
-                이 호실 상담하기
-              </a>
+              <div className="price-card__actions">
+                <a className="button button--gold button--compact" href={`tel:${PHONE_NUMBER}`}>
+                  이 호실 상담하기
+                </a>
+                <a className="button button--outline button--outline-dark button--compact" href={`tel:${PHONE_NUMBER}`}>
+                  잔여 여부 문의
+                </a>
+              </div>
             </article>
           ))}
         </div>
 
-        <p className="section-note">방문 전 잔여세대 확인은 필수입니다.</p>
+        <div className="price-cta">
+          <p>원하시는 호실은 빠르게 상담 받아보세요.</p>
+          <a className="button button--gold" href={`tel:${PHONE_NUMBER}`}>
+            📞 잔여세대 문의하기
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -119,6 +119,10 @@ main,
   font-weight: 800;
 }
 
+.section-note--light {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 .section-heading--light h2,
 .section-heading--light p {
   color: var(--white);
@@ -210,6 +214,13 @@ main,
   color: var(--gold-bright);
   background: rgba(7, 26, 51, 0.54);
   font-size: 14px;
+  font-weight: 900;
+}
+
+.hero__urgent {
+  margin: 18px 0 0;
+  color: var(--gold-bright);
+  font-size: 15px;
   font-weight: 900;
 }
 
@@ -379,6 +390,43 @@ main,
 .price-card .button {
   align-self: center;
   min-width: 112px;
+}
+
+.price-card__actions {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+}
+
+.urgency-line {
+  display: inline-flex;
+  margin: 0 0 18px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--navy);
+  background: rgba(225, 195, 112, 0.28);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.price-cta {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0 0;
+  padding: 22px;
+  border: 1px solid rgba(199, 161, 90, 0.32);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(7, 26, 51, 0.96), rgba(16, 39, 68, 0.94)),
+    var(--navy);
+  box-shadow: var(--shadow);
+}
+
+.price-cta p {
+  margin: 0;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 900;
 }
 
 .benefit-grid {
@@ -638,6 +686,45 @@ main,
   margin-top: 10px;
 }
 
+.final-cta {
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(7, 26, 51, 0.96), rgba(16, 39, 68, 0.9)),
+    url("/images/terrace.jpg") center / cover,
+    var(--navy);
+}
+
+.final-cta__inner {
+  text-align: center;
+}
+
+.final-cta h2 {
+  margin: 8px 0 12px;
+  color: var(--white);
+  font-size: clamp(30px, 7vw, 48px);
+  line-height: 1.12;
+}
+
+.final-cta p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.final-cta__phone {
+  color: var(--gold-bright) !important;
+  font-size: clamp(24px, 6vw, 36px) !important;
+  font-weight: 950 !important;
+}
+
+.final-cta__actions {
+  display: grid;
+  gap: 12px;
+  max-width: 460px;
+  margin: 24px auto 0;
+}
+
 .floating-call {
   position: fixed;
   left: 12px;
@@ -678,6 +765,10 @@ main,
   }
 
   .hero__actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .final-cta__actions {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -877,6 +968,14 @@ main,
 
   .price-card .button {
     width: 100%;
+  }
+
+  .price-card__actions {
+    width: 100%;
+  }
+
+  .price-cta {
+    padding: 18px;
   }
 
   .option-card,
