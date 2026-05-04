@@ -112,6 +112,13 @@ main,
   line-height: 1.7;
 }
 
+.section-note {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 800;
+}
+
 .section-heading--light h2,
 .section-heading--light p {
   color: var(--white);
@@ -625,6 +632,10 @@ main,
   color: var(--white);
   font-weight: 900;
   text-align: right;
+}
+
+.contact-card .button + .button {
+  margin-top: 10px;
 }
 
 .floating-call {

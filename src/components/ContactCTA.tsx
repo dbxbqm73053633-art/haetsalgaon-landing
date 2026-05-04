@@ -6,11 +6,11 @@ export default function ContactCTA() {
     <section className="section contact" id="contact">
       <div className="container contact__inner">
         <div>
-          <span className="section-kicker">Manager</span>
-          <h2>이재은 실장 직접 상담</h2>
+          <span className="section-kicker">Consulting</span>
+          <h2>분양 상담</h2>
           <p>
-            잔여 세대, 테라스 가능 여부, 방문 상담 일정을 정확하게 확인해 드립니다.
-            허위 정보 없이 실제 상담 가능한 조건만 안내합니다.
+            이재은 실장이 잔여세대, 방문 예약, 계약 절차까지 친절하게 안내드립니다.
+            테라스 세대는 조기 마감될 수 있으니 방문 전 확인해주세요.
           </p>
         </div>
 
@@ -22,18 +22,22 @@ export default function ContactCTA() {
             </div>
 
             <div>
-              <dt>전화번호</dt>
+              <dt>분양문의</dt>
               <dd>{DISPLAY_PHONE}</dd>
             </div>
 
             <div>
               <dt>상담 안내</dt>
-              <dd>잔여 세대 우선 확인</dd>
+              <dd>잔여세대 확인 및 방문 예약</dd>
             </div>
           </dl>
 
           <a className="button button--gold button--wide" href={`tel:${PHONE_NUMBER}`}>
-            실시간 분양 문의
+            지금 바로 상담하기
+          </a>
+
+          <a className="button button--outline button--wide" href={`tel:${PHONE_NUMBER}`}>
+            방문 예약 문의
           </a>
         </div>
       </div>

@@ -23,8 +23,8 @@ export default function PriceTable() {
       <div className="container">
         <div className="section-heading">
           <span className="section-kicker">Remaining Units</span>
-          <h2>잔여 세대 확인</h2>
-          <p>각 호실별 조건은 실시간으로 변동될 수 있어 전화 상담을 권장합니다.</p>
+          <h2>잔여세대 및 분양가 안내</h2>
+          <p>호실별 면적과 분양가를 확인하시고, 관심 세대는 빠르게 상담 받아보세요.</p>
         </div>
 
         <div className="price-card-grid">
@@ -40,11 +40,13 @@ export default function PriceTable() {
               </div>
 
               <a className="button button--gold button--compact" href={`tel:${PHONE_NUMBER}`}>
-                상담하기
+                이 호실 상담하기
               </a>
             </article>
           ))}
         </div>
+
+        <p className="section-note">방문 전 잔여세대 확인은 필수입니다.</p>
       </div>
     </section>
   );

@@ -148,8 +148,8 @@ export default function LocationMap() {
       <div className="container">
         <div className="section-heading">
           <span className="section-kicker">Location</span>
-          <h2>오시는 길</h2>
-          <p>서울 접근성과 생활 인프라를 모두 갖춘 햇살가온의 위치를 확인해보세요.</p>
+          <h2>입지 안내</h2>
+          <p>서울 접근성과 생활 인프라를 모두 갖춘 실거주 핵심 입지</p>
         </div>
 
         <div className="location-layout">
@@ -158,16 +158,16 @@ export default function LocationMap() {
             <h3>{LOCATION.name}</h3>
             <p className="location-card__address">{LOCATION.address}</p>
             <p className="location-card__notice">
-              방문 전 잔여세대 및 상담 가능 시간을 확인해주세요.
+              방문 전 잔여세대 및 상담 가능 시간을 확인해보세요.
             </p>
 
             <div className="location-card__actions">
               <a className="button button--gold" href={KAKAO_MAP_URL} target="_blank" rel="noreferrer">
-                카카오맵 길찾기
+                현장 위치 확인하기
               </a>
 
               <a className="button button--outline button--outline-dark" href={`tel:${PHONE_NUMBER}`}>
-                전화 문의하기
+                잔여세대 전화문의
               </a>
             </div>
           </article>
@@ -177,9 +177,9 @@ export default function LocationMap() {
 
             {hasMapError ? (
               <div className="map-fallback">
-                <p>지도를 불러오지 못했습니다. 카카오맵에서 위치를 확인해주세요.</p>
+                <p>지도가 표시되지 않을 경우 아래 버튼으로 정확한 위치를 확인해주세요.</p>
                 <a className="button button--gold" href={KAKAO_MAP_URL} target="_blank" rel="noreferrer">
-                  카카오맵 길찾기
+                  현장 위치 확인하기
                 </a>
               </div>
             ) : null}
